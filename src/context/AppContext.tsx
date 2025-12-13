@@ -1,5 +1,6 @@
 // # inicio file: src/context/AppContext.tsx
-import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
+import type {ReactNode} from 'react'
 
 // Tipos
 type Theme = "light" | "dark";
@@ -50,7 +51,41 @@ const translations = {
     email_label: "Boletín por email",
     register_email: "Registrarme",
     placeholder_email: "Tu email",
-    
+
+    // 🟢 NUEVAS TRADUCCIONES: Footer
+    footer_follow: "Seguinos",
+
+    // Columna 1: Nosotros
+    footer_about_title: "Nosotros",
+    footer_company: "Empresa",
+    footer_location: "Ubicación",
+    footer_news: "Noticias",
+    footer_contact: "Contacto",
+
+    // Columna 2: Tienda
+    footer_store_title: "Tienda",
+    footer_featured: "Destacados",
+    footer_new: "Nuevos",
+    footer_offers: "Ofertas",
+    footer_brands: "Marcas",
+    footer_wholesale: "Venta por mayor",
+
+    // Columna 3: Ayuda
+    footer_help_title: "Ayuda",
+    footer_faq: "Preguntas",
+    footer_shipping: "Envíos",
+    footer_payment: "Formas de pago",
+    footer_terms: "Condiciones",
+    footer_privacy: "Privacidad",
+
+    // Columna 4: Mi Cuenta
+    footer_account_title: "Mi cuenta",
+    footer_my_account: "Mi cuenta", // Redundante pero necesario si cambia el contexto
+    footer_newsletter: "Boletín",
+
+    // Info Contacto
+    footer_address: "Cerro Largo 1173 entre Av. Libertador y Cuareim",
+    footer_address_city: "Centro, Montevideo Uruguay",
   },
   en: {
     // Generales
@@ -96,6 +131,40 @@ const translations = {
     email_label: "Email Newsletter",
     register_email: "Sign Up",
     placeholder_email: "Your email",
+    // 🟢 NEW TRANSLATIONS: Footer
+    footer_follow: "Follow Us",
+
+    // Column 1: About
+    footer_about_title: "About Us",
+    footer_company: "Company",
+    footer_location: "Location",
+    footer_news: "News",
+    footer_contact: "Contact",
+
+    // Column 2: Store
+    footer_store_title: "Store",
+    footer_featured: "Featured",
+    footer_new: "New Arrivals",
+    footer_offers: "Offers",
+    footer_brands: "Brands",
+    footer_wholesale: "Wholesale",
+
+    // Column 3: Help
+    footer_help_title: "Help",
+    footer_faq: "FAQ",
+    footer_shipping: "Shipping",
+    footer_payment: "Payment Methods",
+    footer_terms: "Terms & Conditions",
+    footer_privacy: "Privacy Policy",
+
+    // Column 4: My Account
+    footer_account_title: "My Account",
+    footer_my_account: "My Account",
+    footer_newsletter: "Newsletter",
+
+    // Info Contact
+    footer_address: "Cerro Largo 1173 between Av. Libertador and Cuareim",
+    footer_address_city: "Centro, Montevideo Uruguay",
   },
 };
 

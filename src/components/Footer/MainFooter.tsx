@@ -1,30 +1,48 @@
-// inicio file: src/components/Footer/MainFooter.tsx
+// # inicio file: src/components/Footer/MainFooter.tsx
 
 import React from "react";
 import "./MainFooter.css";
-
-import nosotrosIcon from "../../assets/icons/nosotros-icon.png"
-import LogasoP from "./LogasoP";
 import { Link } from "react-router";
+import { useAppContext } from "../../context/AppContext"; // 1. Importamos Context
+
+import nosotrosIcon from "../../assets/icons/nosotros-icon.png";
 import whatsappIcon from "../../assets/icons/whatsapp-icon-exam.png";
-import phoneIcon from "../../assets/icons/phone-icon.png";
+import phoneIcon from "../../assets/icons/phone-icon-black.png";
+import LogasoP from "./LogasoP";
+import cellIcon from "../../assets/icons/cell-phone-icon-2.png"
+import atIcon from "../../assets/icons/arroba-icon.png"
+import emailIcon from "../../assets/icons/correo-icon.png"
+import igIcon from "../../assets/icons/ig-icon.png"
+import fbIcon from "../../assets/icons/fb-icon.png"
+import linkedinIcon from "../../assets/icons/linkedin-icon.png"
+import ytIcon from "../../assets/icons/yt-icon.png"
+import tiktokIcon from "../../assets/icons/tiktok-icon.png"
+
+
 const MainFooter: React.FC = () => {
+  const { t, theme } = useAppContext(); // 2. Obtenemos 't' y 'theme'
+
+  // Definimos color del logo dinámico para el footer
+  // Generalmente los footers son oscuros, así que el texto/logo suele ser blanco
+  const logoTextColor = theme === "light" ? "#333" : "white";
+
   return (
     <footer className="main-footer">
       {/* --- FILA 1: REDES SOCIALES --- */}
       <div className="social-bar">
-        <span className="social-label">Seguinos</span>
+        {/* Traducido: Seguinos / Follow Us */}
+        <span className="social-label">{t("footer_follow")}</span>
         <div className="social-icons">
           <img className="social-icon whatsapp" src={whatsappIcon} alt="WhatsApp" />
           <img className="social-icon phone" src={phoneIcon} alt="Phone" />
-          <i className="social-icon mobile"></i>
-          <i className="social-icon at"></i>
-          <i className="social-icon email"></i>
-          <i className="social-icon instagram"></i>
-          <i className="social-icon facebook"></i>
-          <i className="social-icon linkedin"></i>
-          <i className="social-icon youtube"></i>
-          <i className="social-icon location"></i>
+          <img className="social-icon cell" src={cellIcon} alt="Cell Phone" />
+          <img className="social-icon at" src={atIcon} alt="Email" />
+          <img className="social-icon email" src={emailIcon} alt="Email" />
+          <img className="social-icon ig" src={igIcon} alt="Instagram" />
+          <img className="social-icon fb" src={fbIcon} alt="Facebook" />
+          <img className="social-icon linkedin" src={linkedinIcon} alt="LinkedIn" />
+          <img className="social-icon yt" src={ytIcon} alt="YouTube" />
+          <img className="social-icon tiktok" src={tiktokIcon} alt="TikTok" />
         </div>
       </div>
 
@@ -34,21 +52,21 @@ const MainFooter: React.FC = () => {
         <div className="footer-col">
           <div className="col-header">
             <img id="nosotros-icon" src={nosotrosIcon} alt="nosotros" />
-            <h4>Nosotros</h4>
+            <h4>{t("footer_about_title")}</h4>
           </div>
           <ul className="footer-links">
             <li>
-              <span className="icon-bullet">🏢</span> Empresa
+              <span className="icon-bullet">🏢</span> {t("footer_company")}
             </li>
             <li>
-              <span className="icon-bullet">📍</span> Ubicación
+              <span className="icon-bullet">📍</span> {t("footer_location")}
             </li>
             <li>
-              <span className="icon-bullet">📰</span> Noticias
+              <span className="icon-bullet">📰</span> {t("footer_news")}
             </li>
             <li>
-              <Link to="/contacto" title="Contacto">
-                <span className="icon-bullet">@</span> Contacto
+              <Link to="/contacto" title={t("footer_contact")}>
+                <span className="icon-bullet">@</span> {t("footer_contact")}
               </Link>
             </li>
           </ul>
@@ -58,23 +76,23 @@ const MainFooter: React.FC = () => {
         <div className="footer-col">
           <div className="col-header">
             <IconTag />
-            <h4>Tienda</h4>
+            <h4>{t("footer_store_title")}</h4>
           </div>
           <ul className="footer-links">
             <li>
-              <span className="icon-bullet">🏷️</span> Destacados
+              <span className="icon-bullet">🏷️</span> {t("footer_featured")}
             </li>
             <li>
-              <span className="icon-bullet">✨</span> Nuevos
+              <span className="icon-bullet">✨</span> {t("footer_new")}
             </li>
             <li>
-              <span className="icon-bullet">💥</span> Ofertas
+              <span className="icon-bullet">💥</span> {t("footer_offers")}
             </li>
             <li>
-              <span className="icon-bullet">🏁</span> Marcas
+              <span className="icon-bullet">🏁</span> {t("footer_brands")}
             </li>
             <li>
-              <span className="icon-bullet">📦</span> Venta por mayor
+              <span className="icon-bullet">📦</span> {t("footer_wholesale")}
             </li>
           </ul>
         </div>
@@ -83,23 +101,23 @@ const MainFooter: React.FC = () => {
         <div className="footer-col">
           <div className="col-header">
             <IconInfo />
-            <h4>Ayuda</h4>
+            <h4>{t("footer_help_title")}</h4>
           </div>
           <ul className="footer-links">
             <li>
-              <span className="icon-bullet">❓</span> Preguntas
+              <span className="icon-bullet">❓</span> {t("footer_faq")}
             </li>
             <li>
-              <span className="icon-bullet">🚚</span> Envíos
+              <span className="icon-bullet">🚚</span> {t("footer_shipping")}
             </li>
             <li>
-              <span className="icon-bullet">💳</span> Formas de pago
+              <span className="icon-bullet">💳</span> {t("footer_payment")}
             </li>
             <li>
-              <span className="icon-bullet">📄</span> Condiciones
+              <span className="icon-bullet">📄</span> {t("footer_terms")}
             </li>
             <li>
-              <span className="icon-bullet">🔒</span> Privacidad
+              <span className="icon-bullet">🔒</span> {t("footer_privacy")}
             </li>
           </ul>
         </div>
@@ -108,14 +126,14 @@ const MainFooter: React.FC = () => {
         <div className="footer-col">
           <div className="col-header">
             <IconUser />
-            <h4>Mi cuenta</h4>
+            <h4>{t("footer_account_title")}</h4>
           </div>
           <ul className="footer-links">
             <li>
-              <span className="icon-bullet">👤</span> Mi cuenta
+              <span className="icon-bullet">👤</span> {t("footer_my_account")}
             </li>
             <li>
-              <span className="icon-bullet">✉️</span> Boletín
+              <span className="icon-bullet">✉️</span> {t("footer_newsletter")}
             </li>
           </ul>
         </div>
@@ -127,9 +145,13 @@ const MainFooter: React.FC = () => {
           <div className="contact-details">
             {/* Logo Circular "P" */}
             <div className="footer-logo-circle">
-              {/* <span className="logo-p">P</span>
-              <span className="logo-dot"></span> */}
-              <LogasoP />
+              <LogasoP
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  color: logoTextColor, // El footer puede requerir un color específico
+                }}
+              />
             </div>
 
             <div className="contact-info-text">
@@ -141,7 +163,10 @@ const MainFooter: React.FC = () => {
           </div>
 
           <p className="address-text">
-            📍 Cerro Largo 1173 entre Av. Libertador y Cuareim
+            {/* Dirección Traducida (Por si quieres cambiar "entre" por "between") */}
+            📍 {t("footer_address")}
+            <br />
+            {t("footer_address_city")}
           </p>
         </div>
       </div>
@@ -149,7 +174,7 @@ const MainFooter: React.FC = () => {
   );
 };
 
-// --- ICONOS SVG HELPER COMPONENTS (Para mantener el JSX limpio) ---
+// --- ICONOS SVG HELPER COMPONENTS ---
 
 const IconTag = () => (
   <svg
@@ -199,5 +224,4 @@ const IconUser = () => (
 );
 
 export default MainFooter;
-
 // fin file: src/components/Footer/MainFooter.tsx

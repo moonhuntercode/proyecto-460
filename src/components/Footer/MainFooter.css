@@ -36,10 +36,11 @@
 /* Simulador de iconos sociales (Círculos blancos pequeños) */
 /* En un proyecto real, reemplazarías esto con tus <img> o <svg> reales */
 .social-icon {
-  width: 15px;
-  height: 15px;
-  background-color: #eee;
-  border-radius: 50%;
+  width: 20px;
+  height: auto;
+  /* Blanco */
+  filter: invert(1);
+  
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.2s;

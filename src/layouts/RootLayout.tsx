@@ -7,7 +7,7 @@ import whatsappIcon from "../assets/icons/whatsapp-icon-2.png"
 // globals 
 import '../globals.css';
 export default function RootLayout() {
-  const { toggleTheme, toggleLanguage, t, theme, language } = useAppContext();
+  const { toggleTheme, toggleLanguage,theme, language } = useAppContext();
 
   return (
     <div className="app-layout">

@@ -20,7 +20,7 @@ import mapIcon from "../../assets/icons/map-icon-2.png";
 export default function Navbar() {
   // 3. Obtenemos la función de traducción 't'
   const { t,theme } = useAppContext();
-  const logoColor = theme === "light" ? "#ff4d4d" : "white";
+  const accentColor = theme === "light" ? "#ff4d4d" : "white";
   const logoColor2 = theme === "light" ? "blue" : "white";
 
   return (
@@ -30,9 +30,9 @@ export default function Navbar() {
         <div className="logo-1-inside-navbar">
           <Link to="/" title={t("home")}>
             <LogoNavbarComponent 
+            accentColor={accentColor}
             style={{
               color:logoColor2,
-              colorSote:logoColor
             }}
             />
             {/* 🔥 CORRECCIÓN AQUÍ: Usamos traducción y mayúsculas */}
