@@ -1,0 +1,79 @@
+/*  inicio file: src/components/UI/DotIndicator/DotIndicator.css */
+
+:root {
+  --dot-size: 24px;
+  --dot-transition: 0.3s ease;
+  
+  /* Paleta de Colores centralizada */
+  --color-gold: #e2c1a8;
+  --color-silver: #e0e0e0;
+  --color-default: #000000;
+  --color-ring-default: currentColor;
+}
+
+.dot-indicator {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  color: var(--color-default); /* Color base */
+}
+
+.dot-indicator:hover {
+  transform: scale(1.1);
+}
+
+.dot-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Lógica del Anillo (Outer Circle) --- */
+.circle-outer {
+  fill: var(--color-ring-default);
+  transition: fill var(--dot-transition);
+}
+
+/* Modificador: Anillo Blanco (Para el Hero Carousel) */
+.dot-indicator.ring-white .circle-outer {
+  fill: #ffffff;
+}
+
+/* Modificador: Escala de grises (Para estados inactivos o deshabilitados visualmente) */
+.dot-indicator.grayscale .circle-outer {
+  fill: #888888;
+}
+
+/* --- Lógica del Relleno (Inner Circle) --- */
+.circle-inner {
+  fill: transparent; /* Por defecto vacío (inactivo) */
+  transition: fill var(--dot-transition);
+}
+
+/* Estado ACTIVO: Por defecto */
+.dot-indicator.active .circle-inner {
+  fill: var(--color-default);
+}
+
+/* Estado ACTIVO: Variante Gold */
+.dot-indicator.variant-gold.active .circle-inner {
+  fill: var(--color-gold);
+}
+
+/* Estado ACTIVO: Variante Silver */
+.dot-indicator.variant-silver.active .circle-inner {
+  fill: var(--color-silver);
+}
+
+/* Estado ACTIVO + Grayscale (caso borde) */
+.dot-indicator.grayscale.active .circle-inner {
+  fill: #555555;
+}
+
+/* fin file: src/components/UI/DotIndicator/DotIndicator.css */

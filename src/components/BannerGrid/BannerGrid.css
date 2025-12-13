@@ -1,0 +1,105 @@
+/*  inicio file: src/components/BannerGrid/BannerGrid.css */
+
+:root {
+  --label-red: #d95d5d; /* Rojo corporativo */
+  --banner-height: 350px; /* Altura imponente */
+  --radius: 20px; /* Bordes muy redondeados según diseño */
+}
+
+.banner-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 60px auto; /* Margen inferior amplio */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.banner-grid {
+  display: grid;
+  /* 3 Columnas iguales */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 25px;
+}
+
+/* --- TARJETA --- */
+.banner-card {
+  position: relative;
+  height: var(--banner-height);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Wrapper para controlar el zoom de la imagen */
+.banner-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Efecto Zoom al pasar el mouse */
+.banner-card:hover .banner-img {
+  transform: scale(1.1);
+}
+
+/* --- ETIQUETA ROJA (LABEL) --- */
+.banner-label {
+  position: absolute;
+  bottom: 30px; /* Separado del fondo */
+  left: 50%;
+  transform: translateX(-50%); /* Centrado perfecto */
+  background-color: var(--label-red);
+  padding: 12px 25px;
+  border-radius: 30px; /* Forma de píldora */
+  width: 80%; /* Ancho relativo a la tarjeta */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.banner-card:hover .banner-label {
+  background-color: #c04040; /* Rojo un poco más oscuro al hover */
+}
+
+.banner-label h3 {
+  margin: 0;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .banner-grid {
+    grid-template-columns: 1fr; /* Una columna en móvil/tablet vertical */
+    gap: 20px;
+  }
+
+  :root {
+    --banner-height: 250px; /* Menor altura en móvil */
+  }
+
+  .banner-label {
+    width: 90%;
+    bottom: 20px;
+  }
+}
+
+.banner-label h3{
+  
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+/* fin file: src/components/BannerGrid/BannerGrid.css */

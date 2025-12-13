@@ -1,0 +1,171 @@
+/* inicio file: src/components/PromoSection/PromoSection.css */
+
+:root {
+  --primary-red: #d95d5d;
+  --text-dark: #333;
+}
+
+.promo-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.promo-container {
+  display: flex;
+  gap: 30px; /* Espacio entre las dos tarjetas grandes */
+  width: 100%;
+}
+
+/* --- ESTILOS GENERALES DE TARJETA --- */
+.promo-card {
+  flex: 1; /* Ambas ocupan el mismo ancho (50%) */
+  background-color: #fff;
+  border-radius: 12px; /* Coincide con CategorySection */
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+/* --- TIPOGRAFÍA --- */
+.promo-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.4rem; /* Título grande */
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+/* --- ETIQUETA DE PRECIO (Caja Roja) --- */
+.price-tag {
+  background-color: var(--primary-red);
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 8px 15px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.price-label {
+  font-size: 0.8rem;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 2px;
+}
+
+.price-amount {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+/* --- IMÁGENES --- */
+.image-wrapper {
+  flex-shrink: 0;
+}
+
+.product-img {
+  max-width: 180px; /* Tamaño controlado */
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- AJUSTES ESPECÍFICOS: MOPA (Izquierda) --- */
+.mopa-card .image-wrapper {
+  order: 1; /* Imagen a la izquierda */
+}
+.mopa-card .info-wrapper {
+  order: 2; /* Texto a la derecha */
+}
+
+/* --- AJUSTES ESPECÍFICOS: PANEL (Derecha) --- */
+.panel-card .image-wrapper {
+  order: 2; /* Imagen a la derecha */
+}
+.panel-card .info-wrapper {
+  order: 1; /* Texto a la izquierda */
+}
+
+/* Badge "DESTACADOS" */
+.badge-destacado {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-red);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* --- MINI NAVEGACIÓN (Botones pequeños abajo derecha) --- */
+.mini-nav {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+.mini-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.mini-btn:hover {
+  background: var(--primary-red);
+  color: white;
+  border-color: var(--primary-red);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .promo-container {
+    flex-direction: column; /* Apilar una arriba de otra */
+  }
+  
+  .promo-card {
+    width: 100%;
+  }
+
+  .promo-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* fin file: src/components/PromoSection/PromoSection.css */

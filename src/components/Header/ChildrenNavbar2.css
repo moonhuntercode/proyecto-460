@@ -1,0 +1,121 @@
+/* inicio file: src/components/Header/ChildrenNavbar2.css */
+
+/* --- Estilos Base (Escritorio) --- */
+.children-navbar-container {
+  padding: 10px 20px;
+  position: relative;
+   /* Para posicionar el menú móvil absoluto si se desea */
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+/* Lista para escritorio: Horizontal */
+.desktop-nav-list {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 15px;
+  /* Permite scroll si la pantalla es mediana */
+  /* overflow-x: auto;  */
+  /* scrollbar-width: none; */
+  
+}
+.desktop-nav-list::-webkit-scrollbar {
+  display: none; /* Ocultar scrollbar Chrome/Safari */
+}
+
+/* Botón Hamburguesa (Oculto por defecto en escritorio) */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: white; /* Asumimos texto blanco sobre el fondo rojo/negro */
+}
+
+/* Menú Móvil (Oculto por defecto) */
+.mobile-nav-menu {
+  display: none;
+  
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-nav-menu.open {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  
+}
+
+
+/* --- MEDIA QUERY (Móvil) --- */
+/* Se activa cuando el ancho es menor a 768px (cubre tu req de <400px) */
+@media (max-width: 768px) {
+    
+  .children-navbar-container {
+    padding: 10px;
+  }
+  /* 🟢 NUEVO: Estado cuando el menú está abierto */
+  .children-navbar-container.menu-open {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 190px; /* Aquí se aplica el ancho deseado */
+  }
+
+  /* Ocultamos la lista horizontal */
+  .desktop-nav-list {
+    display: none;
+  }
+
+  /* Mostramos el botón hamburguesa */
+  .hamburger-btn {
+    display: block;
+  }
+  
+  /* Ajuste de items en móvil para que se vean en lista o grilla */
+  .nav-category-item {
+    flex-direction: row !important; /* Icono al lado del texto */
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-category-item img {
+    width: 25px; /* Iconos más pequeños en lista vertical */
+    height: 25px;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-category-label {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .icons-inside-navbar-container{
+    visibility: hidden;
+}  
+}
+
+@media screen and (min-width:768px){
+  .mobile-header-controls{
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-auto-flow: row;
+grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+height: auto;
+}
+.mobile-nav-menu{
+    visibility: hidden;
+    display: none;
+}
+
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* fin file: src/components/Header/ChildrenNavbar2.css */

@@ -1,0 +1,126 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --one-hundred-percent: 100%;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --navbar-bg: #d95d5d;
+  --card-bg: #ffffff;
+}
+/* reset start here */
+*,*::after,*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body,html{
+  height: var(--one-hundred-percent);
+  width: var(--one-hundred-percent);
+}
+body{
+  height: auto;
+  color:black;
+}
+/* reset end here */
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+  &:hover {
+   color: #535bf2;
+  }
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  &:hover {
+    border-color: #646cff;
+  }
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/* dark mode */
+/* Variables para modo oscuro */
+body.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --navbar-bg: #040405; /* Un cambio de color para notar la diferencia */
+  --card-bg: #2d2d2d;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Aplicamos variables a componentes existentes */
+.navbar-container #children-of-navbar-2 {
+  background-color: var(--navbar-bg) !important;
+}
+
+.category-card, .promo-card, .product-card, .banner-card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, p, span {
+  color: var(--text-color);
+}
+
+#whatsapp-div{
+  position: fixed;  
+  bottom: 450px;
+  right: 40px;
+  z-index: 11;
+  img{
+    width: 40px;
+    height: auto;
+  }
+}

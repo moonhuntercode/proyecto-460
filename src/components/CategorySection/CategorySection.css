@@ -1,0 +1,106 @@
+/* # inicio file: src/components/CategorySection/CategorySection.css */
+
+:root {
+  --primary-red: #d95d5d; /* Color rojizo/salmón extraído de tu imagen 'web.jpg' */
+  --card-height: 250px;
+  --border-radius: 12px;
+}
+
+.category-section {
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo estándar para evitar que se estiren demasiado */
+  margin: 40px auto; /* Espacio vertical para separar del carousel */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.category-grid {
+  display: grid;
+  /* Grid responsivo: crea columnas de min 300px, si caben 3, pone 3. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; /* Espacio entre tarjetas */
+}
+
+/* --- TARJETA --- */
+.category-card {
+  position: relative;
+  height: var(--card-height);
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Para que la imagen no se salga de los bordes redondos */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la foto cubra todo sin deformarse */
+  display: block;
+}
+
+/* --- ICONO FLOTANTE (Badge Rojo) --- */
+.icon-badge {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  /* Fondo rojo del icono */
+  /* background-color: var(--primary-red); */
+  border-radius: 8px; /* Ligeramente cuadrado como en la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+  z-index: 2;
+}
+
+.category-icon {
+  width: 30px;
+  height: 30px;
+  /* Invierte el color a blanco si el PNG es negro */
+  /* filter: invert(1);  */
+  object-fit: contain;
+}
+
+/* --- ETIQUETA INFERIOR (Barra Roja) --- */
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-red);
+  padding: 12px 0;
+  text-align: center;
+  z-index: 2;
+}
+
+.card-label h3 {
+  margin: 0;
+  color: white;
+  font-family: 'Arial', sans-serif; /* Usa tu tipografía corporativa aquí */
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsive Ajustes */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: 1fr; /* Una sola columna en celular */
+  }
+  
+  :root {
+    --card-height: 200px; /* Tarjetas un poco más bajas en móvil */
+  }
+}
+
+/* # fin file: src/components/CategorySection/CategorySection.css */
