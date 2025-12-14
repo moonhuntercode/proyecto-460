@@ -22,7 +22,7 @@ export default function Navbar() {
   const { t,theme } = useAppContext();
   const accentColor = theme === "light" ? "#ff4d4d" : "white";
   const logoColor2 = theme === "light" ? "blue" : "white";
-
+  
   return (
     <div className="navbar-container">
       {/* Sección Superior */}
@@ -50,7 +50,12 @@ export default function Navbar() {
           />
         </label>
 
-        <div className="icons-inside-navbar-container">
+        <div className="icons-inside-navbar-container"
+
+        style={{
+          filter: theme === "light" ? "invert(0)" : "invert(1)",
+        }}
+        >
           <Link to="/contacto" title="Contacto">
             <img src={arrobaIcon} alt="Contacto" />
           </Link>

@@ -24,7 +24,7 @@ const MainFooter: React.FC = () => {
 
   // Definimos color del logo dinámico para el footer
   // Generalmente los footers son oscuros, así que el texto/logo suele ser blanco
-  const logoTextColor = theme === "light" ? "#333" : "white";
+  const logoTextColor = theme === "light" ? "blue" : "black";
 
   return (
     <footer className="main-footer">

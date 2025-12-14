@@ -16,6 +16,7 @@ import indumentariaIcon from "../../assets/icons/indumentaria-icon.png";
 import saludIcon from "../../assets/icons/salud-icon.png";
 import ofertasIcon from "../../assets/icons/ofertas-icon.png";
 import cotillonIcon from "../../assets/icons/cotillon-icon.png";
+import contactIcon from "../../assets/icons/contact-icon-white.png";
 
 // 🆕 Definición de Items usando CLAVES DE TRADUCCIÓN (labelKey)
 // Nota: 'any' es temporal para evitar errores de tipo estricto con las keys,
@@ -32,6 +33,7 @@ const NAV_ITEMS = [
   { icon: indumentariaIcon, labelKey: "cat_indumentaria", path: "/indumentaria" },
   { icon: saludIcon, labelKey: "cat_salud", path: "/salud" },
   { icon: ofertasIcon, labelKey: "cat_ofertas", path: "/ofertas", isSpecial: true },
+  { icon: contactIcon, labelKey: "contacto", path: "/contacto" },
 ];
 
 const ChildrenNavbar2: React.FC = () => {
