@@ -4,7 +4,7 @@
   "publisher": "victor code",
   "description": "Last Exam on frontend development",
   "repository": "https://github.com/moonhuntercode/proyecto-460",
-  "license": "MIT",
+  "license": "GNU General Public License v2.0 only",
   "author": "victor code",
   "engines": {
     "node": ">=22.16.0"
