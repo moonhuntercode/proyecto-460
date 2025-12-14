@@ -1,5 +1,14 @@
 {
   "name": "last-exam",
+  "displayName": "Last Exam",
+  "publisher": "victor code",
+  "description": "Last Exam on frontend development",
+  "repository": "https://github.com/moonhuntercode/proyecto-460",
+  "license": "MIT",
+  "author": "victor code",
+  "engines": {
+    "node": ">=22.16.0"
+  },
   "private": true,
   "version": "0.0.2",
   "type": "module",
