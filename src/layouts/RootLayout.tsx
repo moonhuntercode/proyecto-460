@@ -16,7 +16,7 @@ export default function RootLayout() {
         style={{
           position: "fixed",
           top: 50,
-          right: 40,
+          right: 60,
           zIndex: 9999,
           display: "flex",
           gap: "10px",
@@ -30,7 +30,9 @@ export default function RootLayout() {
         </button>
       </div>
       <div id="whatsapp-div">
+        <a href="https://wa.me/59176173143">
         <img src={whatsappIcon} alt="WhatsApp Icon" />
+        </a>
       </div>
 
       <Navbar />
