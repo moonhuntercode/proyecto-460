@@ -1,24 +1,23 @@
-// inicio file: src/pages/ContactPage.tsx
+// # inicio file: src/pages/ContactPage.tsx
 
 import { useAppContext } from "../context/AppContext";
-import LogasoP from "../components/Footer/LogasoP"; // Asegúrate de importar el componente nuevo
+import LogasoP from "../components/Footer/LogasoP";
 import "./PageStyles.css";
 
 export default function ContactPage() {
-  const { theme } = useAppContext();
+  // 1. Obtenemos 't' además de 'theme'
+  const { theme, t } = useAppContext();
 
-  // Definimos los colores según el tema
   const textColor = theme === "light" ? "black" : "white";
-  // El logo original es azul (#131a62), pero en modo oscuro debe ser blanco para verse
   const logoColor = theme === "light" ? "#131a62" : "white";
 
   return (
     <div className="page-container contact-page">
-      <h1>Contacto</h1>
-      <p className="contact-intro">
-        Contacta con nuestro equipo y en muy breve te daremos respuesta. Gracias por tu
-        tiempo.
-      </p>
+      {/* Título Traducido */}
+      <h1>{t("contact_page_title")}</h1>
+
+      {/* Intro Traducida */}
+      <p className="contact-intro">{t("contact_intro")}</p>
 
       <hr className="divider" />
 
@@ -27,11 +26,10 @@ export default function ContactPage() {
         <div className="contact-info-panel" style={{ color: textColor }}>
           <h3>PRO Accesorios - ProHome</h3>
 
-          {/* 👇 AQUÍ ESTÁ EL CAMBIO: Usamos LogasoP con estilo dinámico */}
           <div style={{ margin: "20px 0", width: "80px" }}>
             <LogasoP
               style={{
-                color: logoColor, // Esto cambia el "currentColor" del SVG
+                color: logoColor,
                 width: "100%",
                 height: "auto",
               }}
@@ -43,43 +41,45 @@ export default function ContactPage() {
             <li>📱 97 497 597</li>
             <li>💬 WhatsApp</li>
             <li style={{ marginTop: "20px" }}>
-              📍 Cerro Largo 1173 entre Av. Libertador y Cuareim
+              {/* 🟢 REUTILIZACIÓN: Usamos las claves del Footer para la dirección */}
+              📍 {t("footer_address")}
               <br />
-              Centro, Montevideo Uruguay
+              {t("footer_address_city")}
             </li>
           </ul>
         </div>
 
         {/* Columna Derecha: Formulario */}
         <div className="contact-form-panel">
-          <div className="form-header-gray">Formulario de contacto</div>
+          {/* Título del Formulario */}
+          <div className="form-header-gray">{t("contact_form_title")}</div>
 
           <form className="real-contact-form">
             <div className="form-row">
               <div className="form-group">
-                <label>Nombre y apellido *</label>
+                <label>{t("label_name")}</label>
                 <input type="text" className="form-input-line" />
               </div>
               <div className="form-group">
-                <label>Asunto</label>
+                <label>{t("label_subject")}</label>
                 <input type="text" className="form-input-line" />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
-                <label>Teléfono *</label>
+                <label>{t("label_phone")}</label>
                 <input type="tel" className="form-input-line" />
               </div>
               <div className="form-group full-height-row" style={{ gridRow: "span 2" }}>
-                <label>Mensaje *</label>
+                <label>{t("label_message")}</label>
                 <textarea className="form-input-line" rows={5}></textarea>
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
-                <label>Email *</label>
+                <label>{t("label_email")}</label>
                 <input type="email" className="form-input-line" />
               </div>
             </div>
@@ -96,21 +96,19 @@ export default function ContactPage() {
 
             <div className="form-actions">
               <label className="checkbox-label">
-                <input type="checkbox" defaultChecked /> Boletín por email
+                {/* Checkbox Label Traducido */}
+                <input type="checkbox" defaultChecked /> {t("email_label")}
               </label>
               <button type="submit" className="btn-enviar-orange">
-                Enviar
+                {t("btn_send")}
               </button>
             </div>
 
-            <p className="privacy-note">
-              Los datos suministrados son confidenciales y serán tratados como privados.
-              Gracias por el interés.
-            </p>
+            <p className="privacy-note">{t("privacy_note")}</p>
           </form>
         </div>
       </div>
     </div>
   );
 }
-// fin file: src/pages/ContactPage.tsx
+// # fin file: src/pages/ContactPage.tsx

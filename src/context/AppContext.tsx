@@ -87,6 +87,21 @@ const translations = {
     // Info Contacto
     footer_address: "Cerro Largo 1173 entre Av. Libertador y Cuareim",
     footer_address_city: "Centro, Montevideo Uruguay",
+    // 🟢 NUEVAS TRADUCCIONES: ContactPage
+    contact_page_title: "Contacto",
+    contact_intro:
+      "Contacta con nuestro equipo y en muy breve te daremos respuesta. Gracias por tu tiempo.",
+    contact_form_title: "Formulario de contacto",
+
+    // Etiquetas del Formulario
+    label_name: "Nombre y apellido *",
+    label_subject: "Asunto",
+    label_phone: "Teléfono *",
+    label_message: "Mensaje *",
+    label_email: "Email *",
+    btn_send: "Enviar",
+    privacy_note:
+      "Los datos suministrados son confidenciales y serán tratados como privados. Gracias por el interés.",
   },
   en: {
     // Generales
@@ -167,6 +182,21 @@ const translations = {
     // Info Contact
     footer_address: "Cerro Largo 1173 between Av. Libertador and Cuareim",
     footer_address_city: "Centro, Montevideo Uruguay",
+    // 🟢 NEW TRANSLATIONS: ContactPage
+    contact_page_title: "Contact",
+    contact_intro:
+      "Contact our team and we will respond shortly. Thank you for your time.",
+    contact_form_title: "Contact Form",
+
+    // Form Labels
+    label_name: "Full Name *",
+    label_subject: "Subject",
+    label_phone: "Phone *",
+    label_message: "Message *",
+    label_email: "Email *",
+    btn_send: "Send",
+    privacy_note:
+      "The data supplied is confidential and will be treated as private. Thank you for your interest.",
   },
 };
 

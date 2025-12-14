@@ -25,7 +25,10 @@ export default function RootLayout() {
         <button onClick={toggleTheme} style={{padding: "8px", cursor: "pointer" }}>
           {theme === "light" ? "🌙": "☀️"}
         </button>
-        <button onClick={toggleLanguage} style={{ padding: "8px", cursor: "pointer" }}>
+        <button onClick={toggleLanguage} style={{ 
+          background:theme === "light" ? "black" : "white",
+          color:theme === "light" ? "white" : "black",
+          padding: "8px", cursor: "pointer" }}>
           {language === "es" ? "EN" : "ES"}
         </button>
       </div>
