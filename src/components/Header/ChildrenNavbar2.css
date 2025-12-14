@@ -11,8 +11,10 @@
 /* Lista para escritorio: Horizontal */
 .desktop-nav-list {
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+  gap: 30px;
+  /* margin: 18px; */
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
   /* Permite scroll si la pantalla es mediana */
   /* overflow-x: auto;  */
   /* scrollbar-width: none; */

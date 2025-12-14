@@ -33,7 +33,7 @@ const NAV_ITEMS = [
   { icon: indumentariaIcon, labelKey: "cat_indumentaria", path: "/indumentaria" },
   { icon: saludIcon, labelKey: "cat_salud", path: "/salud" },
   { icon: ofertasIcon, labelKey: "cat_ofertas", path: "/ofertas", isSpecial: true },
-  { icon: contactIcon, labelKey: "contacto", path: "/contacto" },
+  { icon: contactIcon, labelKey: "cat_contact", path: "/contacto" },
 ];
 
 const ChildrenNavbar2: React.FC = () => {

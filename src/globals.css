@@ -125,3 +125,7 @@ h1, h2, h3, h4, p, span {
     height: auto;
   }
 }
+#botones-de-temas button {
+  background-color: transparent;
+  border: solid 2px var(--text-color);
+}
