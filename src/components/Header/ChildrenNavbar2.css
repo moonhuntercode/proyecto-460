@@ -54,7 +54,7 @@
 /* --- MEDIA QUERY (Móvil) --- */
 /* Se activa cuando el ancho es menor a 768px (cubre tu req de <400px) */
 @media (max-width: 768px) {
-    
+
   .children-navbar-container {
     padding: 10px;
   }

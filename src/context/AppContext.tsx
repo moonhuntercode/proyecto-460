@@ -30,7 +30,7 @@ const translations = {
     cat_salud: "SALUD Y BELLEZA",
     cat_ofertas: "OFERTAS",
     cat_contact: "CONTACTO",
-    categorias: "CATEGORÍAS",
+    products: "PRODUCTOS",
     card_plants: "PLANTAS ARTIFICIALES",
     card_hardware: "FERRETERÍA",
     card_kitchen: "COCINA",
@@ -111,7 +111,7 @@ const translations = {
     toggleLang: "Español",
     welcome: "Welcome to ProHome",
     footerText: "All rights reserved",
-    categorias: "CATEGORIES",
+    products: "PRODUCTS",
 
     // Categorías del Menú
     cat_cotillon: "PARTY",

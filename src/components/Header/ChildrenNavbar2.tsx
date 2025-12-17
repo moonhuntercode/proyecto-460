@@ -101,8 +101,8 @@ const ChildrenNavbar2: React.FC = () => {
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           )}
-          <span style={{ marginLeft: 10, fontSize: "0.9rem", fontWeight: "bold" }}>
-            {t("categorias")}
+          <span style={{ color: "white",marginLeft: 10, fontSize: "0.9rem", fontWeight: "bold" }}>
+            {t("products")}
           </span>
         </button>
       </div>
